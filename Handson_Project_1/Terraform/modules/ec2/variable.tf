@@ -1,5 +1,5 @@
 variable "instances" {
-  description = "Map of instance configurations"
+  description = "Map of EC2 instance configurations"
   type = map(
     object({
       name      = string
@@ -11,6 +11,11 @@ variable "instances" {
 }
 
 variable "key_name" {
-  description = "Key pair name for EC2 instances"
+  description = "Name of the key pair"
+  type        = string
+}
+
+variable "vpc_id" {
+  description = "VPC ID for security group"
   type        = string
 }
